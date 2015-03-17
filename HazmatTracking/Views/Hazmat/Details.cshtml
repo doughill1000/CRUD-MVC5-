@@ -1,0 +1,122 @@
+﻿@model HazmatTracking.Models.Hazmat
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hazmat</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TransactionNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransactionNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Void)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Void)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Initials)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Initials)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Material)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Material)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.New_Distilled_Dark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.New_Distilled_Dark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gallon_Pound)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gallon_Pound)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shift)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shift)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredFor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredFor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
