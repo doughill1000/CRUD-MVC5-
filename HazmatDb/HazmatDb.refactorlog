@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="29df4171-bfa3-437a-8b2b-588a693b665a" ChangeDateTime="03/17/2015 15:04:53">
+    <Property Name="ElementName" Value="[dbo].[Hazmat].[New/Distilled]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Hazmat]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="New/Distilled/Dark" />
+  </Operation>
+</Operations>
