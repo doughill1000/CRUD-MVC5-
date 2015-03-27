@@ -1,17 +1,17 @@
 ﻿CREATE TABLE [dbo].[Hazmat]
 (
 	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
-    [Trans#] FLOAT NULL, 
+    [TransactionNum] FLOAT NOT NULL UNIQUE, 
     [Void] BIT NULL, 
     [Date] DATETIME NULL, 
-    [Inititals] CHAR(2) NULL, 
-    [Material] VARCHAR(50) NULL, 
-    [New/Distilled/Dark] VARCHAR(10) NULL, 
+    [Initials] CHAR(2) NULL, 
+    [Material] VARCHAR(25) NULL, 
+    [New/Distilled] VARCHAR(25) NULL, 
     [Quantity] FLOAT NULL, 
-    [Gallon/Pound] VARCHAR(10) NULL, 
-    [Destination] VARCHAR(50) NULL, 
+    [Gallon/Pound] VARCHAR(3) NULL, 
+    [Destination] VARCHAR(25) NULL, 
     [RequestedBy] CHAR(2) NULL, 
     [Shift] VARCHAR(10) NULL, 
-    [RequiredFor] VARCHAR(15) NULL, 
+    [RequiredFor] VARCHAR(25) NULL, 
     [Notes] VARCHAR(255) NULL
 )

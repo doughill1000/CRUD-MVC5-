@@ -7,4 +7,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="New/Distilled/Dark" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="c332b2cc-f40b-4f77-a0d2-664f6d6f768b" ChangeDateTime="03/17/2015 15:33:25">
+    <Property Name="ElementName" Value="[dbo].[Hazmat].[Trans#]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Hazmat]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TransactionNum" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="66ae1af1-ab1c-4860-a349-9e1559630daa" ChangeDateTime="03/17/2015 16:08:56">
+    <Property Name="ElementName" Value="[dbo].[Hazmat].[Inititals]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Hazmat]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Initials" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d2da75b8-d128-4207-942f-134830ccf23b" ChangeDateTime="03/18/2015 15:16:14">
+    <Property Name="ElementName" Value="[dbo].[Hazmat].[New/Distilled/Dark]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Hazmat]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="New/Distilled" />
+  </Operation>
 </Operations>
