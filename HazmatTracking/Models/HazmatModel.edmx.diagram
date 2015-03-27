@@ -5,10 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="8af0b3220a984b71b20c194ba5aea596" Name="Diagram1">
-        <EntityTypeShape EntityType="HazmatModel.Location" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HazmatModel.Material" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HazmatModel.C__RefactorLog" Width="1.5" PointX="5.375" PointY="0.75" />
-        <EntityTypeShape EntityType="HazmatModel.Hazmat" Width="1.5" PointX="0.5" PointY="1.125" />
+        <EntityTypeShape EntityType="HazmatModel.Material" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HazmatModel.Destination" Width="1.5" PointX="5.375" PointY="2.75" />
+        <EntityTypeShape EntityType="HazmatModel.Hazmat" Width="1.5" PointX="0.75" PointY="0.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

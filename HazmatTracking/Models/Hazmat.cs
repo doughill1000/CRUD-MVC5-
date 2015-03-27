@@ -15,12 +15,12 @@ namespace HazmatTracking.Models
     public partial class Hazmat
     {
         public System.Guid Id { get; set; }
-        public Nullable<double> TransactionNum { get; set; }
+        public double TransactionNum { get; set; }
         public Nullable<bool> Void { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
         public string Initials { get; set; }
         public string Material { get; set; }
-        public string New_Distilled_Dark { get; set; }
+        public string New_Distilled { get; set; }
         public Nullable<double> Quantity { get; set; }
         public string Gallon_Pound { get; set; }
         public string Destination { get; set; }

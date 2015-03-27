@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="HazmatDb.publish.xml" />
+    <None Include="HazmatDbProduction.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="HazmatDb.refactorlog" />

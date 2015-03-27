@@ -19,24 +19,22 @@ namespace HazmatTracking.Models
 
         public Nullable<bool> Void { get; set; }
 
+        [Required(ErrorMessage = "Required")]
         [DisplayName("Date")]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy, hh:mm}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> Date { get; set; }
 
-        [Required(ErrorMessage = "Required")]
         [DisplayName("Initials")]
         [MaxLength(2, ErrorMessage = "Maximum length is 2 characters.")]
         public string Initials { get; set; }
 
         [Required(ErrorMessage = "Required")]
         [DisplayName("Material")]
-        [MaxLength(50, ErrorMessage = "Maximum length is 50 characters.")]
         public string Material { get; set; }
 
         [Required(ErrorMessage = "Required")]
-        [DisplayName("New/Distilled/Dark")]
-        [MaxLength(10, ErrorMessage = "Maximum length is 10 characters.")]    
-        public string New_Distilled_Dark { get; set; }
+        [DisplayName("New/Distilled")]  
+        public string New_Distilled { get; set; }
 
         [Required(ErrorMessage = "Required")]
         [DisplayName("Quantity")]
@@ -45,27 +43,21 @@ namespace HazmatTracking.Models
 
         [Required(ErrorMessage = "Required")]
         [DisplayName("Gallon/Pound")]
-        [MaxLength(10, ErrorMessage = "Maximum length is 10 characters.")] 
         public string Gallon_Pound { get; set; }
 
         [Required(ErrorMessage = "Required")]
         [DisplayName("Destination")]
-        [MaxLength(50, ErrorMessage = "Maximum length is 50 characters.")]
         public string Destination { get; set; }
 
-        [Required(ErrorMessage = "Required")]
         [DisplayName("Requested By")]
         [MaxLength(2, ErrorMessage = "Maximum length is 2 characters.")]
         public string RequestedBy { get; set; }
 
-        [Required(ErrorMessage = "Required")]
         [DisplayName("Shift")]
         [MaxLength(10, ErrorMessage = "Maximum length is 10 characters.")] 
         public string Shift { get; set; }
 
-        [Required(ErrorMessage = "Required")]
         [DisplayName("Required For")]
-        [MaxLength(15, ErrorMessage = "Maximum length is 15 characters.")] 
         public string RequiredFor { get; set; }
 
         [DisplayName("Notes")]

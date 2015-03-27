@@ -12,9 +12,10 @@ namespace HazmatTracking.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Location
+    public partial class Destination
     {
         public System.Guid Id { get; set; }
         public string Name { get; set; }
+        public string Code { get; set; }
     }
 }

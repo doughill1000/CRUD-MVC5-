@@ -12,123 +12,149 @@
     @Html.AntiForgeryToken()
     var hazmat = Model.Hazmat;
     <div class="form-horizontal">
-        <h4>Hazmat</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => hazmat.Id)
 
-        <div class="form-group">
-            @Html.LabelFor(model => hazmat.TransactionNum, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => hazmat.TransactionNum, new { @class = "label-colon" })
+            </div>
             <div class="col-md-10">
-                @Html.EditorFor(model => hazmat.TransactionNum, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => hazmat.TransactionNum, new { @class = "extraShortInput" })
                 @Html.ValidationMessageFor(model => hazmat.TransactionNum, "", new { @class = "text-danger" })
             </div>
         </div>
+        <br />
 
-        @*<div class="form-group">
-                @Html.LabelFor(model => hazmat.Void, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => hazmat.Void)
-                        @Html.ValidationMessageFor(model => hazmat.Void, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>*@
-
-        <div class="form-group">
-            @Html.LabelFor(model => hazmat.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+        @*<div class="row">
+            @Html.LabelFor(model => hazmat.Void, new { @class = "label-colon" })
             <div class="col-md-10">
-                @Html.EditorFor(model => hazmat.Date, new { htmlAttributes = new { @class = "form-control" } })
+                <div class="checkbox">
+                    @Html.EditorFor(model => hazmat.Void)
+                    @Html.ValidationMessageFor(model => hazmat.Void, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>*@
+
+        <div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => hazmat.Date, new { @class = "label-colon" })
+            </div>
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => hazmat.Date, new { style = "width:100px", id = "hazmat_DateEdit", @class = "DateEdit" })
                 @Html.ValidationMessageFor(model => hazmat.Date, "", new { @class = "text-danger" })
             </div>
         </div>
+        <br />
 
-        <div class="form-group">
-            @Html.LabelFor(model => hazmat.Initials, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => hazmat.Initials, new { @class = "label-colon" })
+            </div>
             <div class="col-md-10">
-                @Html.EditorFor(model => hazmat.Initials, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => hazmat.Initials, new { @class = "twoCharInput" })
                 @Html.ValidationMessageFor(model => hazmat.Initials, "", new { @class = "text-danger" })
             </div>
         </div>
+        <br />
 
-        <div class="form-group">
-            @Html.LabelFor(model => hazmat.Material, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => hazmat.Material, new { @class = "label-colon" })
+            </div>
+
             <div class="col-md-10">
-                @Html.EditorFor(model => hazmat.Material, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => hazmat.Material, Model.Materials, "--Select a Material--", new { @class = "dropdown" })
                 @Html.ValidationMessageFor(model => hazmat.Material, "", new { @class = "text-danger" })
             </div>
         </div>
+        <br />
 
-        <div class="form-group">
-            @Html.LabelFor(model => hazmat.New_Distilled_Dark, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => hazmat.New_Distilled, new { @class = "label-colon" })
+            </div>
             <div class="col-md-10">
-                @Html.EditorFor(model => hazmat.New_Distilled_Dark, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => hazmat.New_Distilled_Dark, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => hazmat.New_Distilled, Model.New_Distilled, new { @class = "dropdown" })
+                @Html.ValidationMessageFor(model => hazmat.New_Distilled, "", new { @class = "text-danger" })
             </div>
         </div>
+        <br />
 
-        <div class="form-group">
-            @Html.LabelFor(model => hazmat.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => hazmat.Quantity, new { @class = "label-colon" })
+            </div>
             <div class="col-md-10">
-                @Html.EditorFor(model => hazmat.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => hazmat.Quantity, new { @class = "extraShortInput" })
+                @Html.DropDownListFor(model => hazmat.Gallon_Pound, Model.Gallon_Pound, new { @class = "dropdown" })
                 @Html.ValidationMessageFor(model => hazmat.Quantity, "", new { @class = "text-danger" })
             </div>
         </div>
+        <br />
 
-        <div class="form-group">
-            @Html.LabelFor(model => hazmat.Gallon_Pound, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => hazmat.Gallon_Pound, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => hazmat.Gallon_Pound, "", new { @class = "text-danger" })
+        <div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => hazmat.Destination, new { @class = "label-colon" })
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => hazmat.Destination, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => hazmat.Destination, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => hazmat.Destination, Model.Destinations, "--Select a Destination--", new { @class = "dropdown" })
                 @Html.ValidationMessageFor(model => hazmat.Destination, "", new { @class = "text-danger" })
             </div>
         </div>
+        <br />
 
-        <div class="form-group">
-            @Html.LabelFor(model => hazmat.RequestedBy, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => hazmat.RequestedBy, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => hazmat.RequestedBy, "", new { @class = "text-danger" })
+        @*<div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => hazmat.RequestedBy, new { @class = "label-colon" })
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => hazmat.RequestedBy, new { @class = "extraShortInput" })
+                    @Html.ValidationMessageFor(model => hazmat.RequestedBy, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
+        <br />*@
 
-        <div class="form-group">
-            @Html.LabelFor(model => hazmat.Shift, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => hazmat.Shift, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => hazmat.Shift, "", new { @class = "text-danger" })
+        @*<div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => hazmat.Shift, new { @class = "label-colon" })
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => hazmat.Shift, new { @class = "extraShortInput" })
+                    @Html.ValidationMessageFor(model => hazmat.Shift, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
+        <br />*@
 
-        <div class="form-group">
-            @Html.LabelFor(model => hazmat.RequiredFor, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => hazmat.RequiredFor, new { @class = "label-colon" })
+            </div>
             <div class="col-md-10">
-                @Html.EditorFor(model => hazmat.RequiredFor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => hazmat.RequiredFor, Model.RequiredFor, new { @class = "extraShortInput" })
                 @Html.ValidationMessageFor(model => hazmat.RequiredFor, "", new { @class = "text-danger" })
             </div>
         </div>
+        <br />
 
-        <div class="form-group">
-            @Html.LabelFor(model => hazmat.Notes, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => hazmat.Notes, new { @class = "label-colon" })
+            </div>
             <div class="col-md-10">
-                @Html.EditorFor(model => hazmat.Notes, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => hazmat.Notes, new { @class = "text-area-small" })
                 @Html.ValidationMessageFor(model => hazmat.Notes, "", new { @class = "text-danger" })
             </div>
-            </div>
+        </div>
+        <br />
 
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
-                </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
+    </div>
 }
 
 <div>

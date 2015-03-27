@@ -1,0 +1,28 @@
+﻿@model HazmatTracking.Models.Hazmats.HazmatViewModel
+
+@{
+    ViewBag.Title = "CodeGuide";
+}
+
+<h2>Code Guide</h2>
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <h4>Material Codes</h4>
+        @Html.Partial("_MaterialCodes", Model.MaterialList)
+    </div>
+    </div>
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <h4>Destination Codes</h4>
+        @Html.Partial("_DestinationCodes", Model.DestinationList)
+    </div>
+</div>
+
+<br />
+
+@Html.ActionLink("Back","Index")
+
+

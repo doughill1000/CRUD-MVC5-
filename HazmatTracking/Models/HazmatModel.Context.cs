@@ -25,9 +25,9 @@ namespace HazmatTracking.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Location> Locations { get; set; }
-        public virtual DbSet<Material> Materials { get; set; }
         public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
+        public virtual DbSet<Material> Materials { get; set; }
+        public virtual DbSet<Destination> Destinations { get; set; }
         public virtual DbSet<Hazmat> Hazmats { get; set; }
     }
 }

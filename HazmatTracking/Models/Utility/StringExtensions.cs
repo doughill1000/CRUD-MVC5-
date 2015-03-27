@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Web;
 
-namespace OrderEntry.Models.Utility
+namespace HazmatTracking.Models.Utility
 {
     public static class StringExtensions
     {

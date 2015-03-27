@@ -11,31 +11,32 @@
           </Key>
           <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
-        <EntityType Name="Hazmat">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="TransactionNum" Type="float" />
-          <Property Name="Void" Type="bit" />
-          <Property Name="Date" Type="datetime" />
-          <Property Name="Initials" Type="char" MaxLength="2" />
-          <Property Name="Material" Type="varchar" MaxLength="50" />
-          <Property Name="New/Distilled/Dark" Type="varchar" MaxLength="10" />
-          <Property Name="Quantity" Type="float" />
-          <Property Name="Gallon/Pound" Type="varchar" MaxLength="10" />
-          <Property Name="Destination" Type="varchar" MaxLength="50" />
-          <Property Name="RequestedBy" Type="char" MaxLength="2" />
-          <Property Name="Shift" Type="varchar" MaxLength="10" />
-          <Property Name="RequiredFor" Type="varchar" MaxLength="15" />
-          <Property Name="Notes" Type="varchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="Location">
+        <EntityType Name="Destination">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hazmat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TransactionNum" Type="float" Nullable="false" />
+          <Property Name="Void" Type="bit" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Initials" Type="char" MaxLength="2" />
+          <Property Name="Material" Type="varchar" MaxLength="25" />
+          <Property Name="New/Distilled" Type="varchar" MaxLength="25" />
+          <Property Name="Quantity" Type="float" />
+          <Property Name="Gallon/Pound" Type="varchar" MaxLength="3" />
+          <Property Name="Destination" Type="varchar" MaxLength="25" />
+          <Property Name="RequestedBy" Type="char" MaxLength="2" />
+          <Property Name="Shift" Type="varchar" MaxLength="10" />
+          <Property Name="RequiredFor" Type="varchar" MaxLength="25" />
+          <Property Name="Notes" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Materials">
           <Key>
@@ -43,35 +44,22 @@
           </Key>
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="3" Nullable="false" />
         </EntityType>
         <EntityContainer Name="HazmatModelStoreContainer">
           <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Destination" EntityType="Self.Destination" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Hazmat" EntityType="Self.Hazmat" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Materials" EntityType="Self.Materials" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HazmatModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Location">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Material">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
         <EntityContainer Name="HazmatEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Locations" EntityType="Self.Location" />
-          <EntitySet Name="Materials" EntityType="Self.Material" />
           <EntitySet Name="C__RefactorLog" EntityType="HazmatModel.C__RefactorLog" />
+          <EntitySet Name="Materials" EntityType="HazmatModel.Material" />
+          <EntitySet Name="Destinations" EntityType="HazmatModel.Destination" />
           <EntitySet Name="Hazmats" EntityType="HazmatModel.Hazmat" />
         </EntityContainer>
         <EntityType Name="C__RefactorLog">
@@ -80,23 +68,39 @@
           </Key>
           <Property Name="OperationKey" Type="Guid" Nullable="false" />
         </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Destination">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="Hazmat">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="TransactionNum" Type="Double" />
+          <Property Name="TransactionNum" Type="Double" Nullable="false" />
           <Property Name="Void" Type="Boolean" />
           <Property Name="Date" Type="DateTime" Precision="3" />
           <Property Name="Initials" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-          <Property Name="Material" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="New_Distilled_Dark" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Material" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="New_Distilled" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="Quantity" Type="Double" />
-          <Property Name="Gallon_Pound" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Destination" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gallon_Pound" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Destination" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="RequestedBy" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
           <Property Name="Shift" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="RequiredFor" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="RequiredFor" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
@@ -105,26 +109,28 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="HazmatModelStoreContainer" CdmEntityContainer="HazmatEntities">
-          <EntitySetMapping Name="Locations">
-            <EntityTypeMapping TypeName="HazmatModel.Location">
-              <MappingFragment StoreEntitySet="Location">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
+          <EntitySetMapping Name="C__RefactorLog">
+            <EntityTypeMapping TypeName="HazmatModel.C__RefactorLog">
+              <MappingFragment StoreEntitySet="__RefactorLog">
+                <ScalarProperty Name="OperationKey" ColumnName="OperationKey" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Materials">
             <EntityTypeMapping TypeName="HazmatModel.Material">
               <MappingFragment StoreEntitySet="Materials">
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="C__RefactorLog">
-            <EntityTypeMapping TypeName="HazmatModel.C__RefactorLog">
-              <MappingFragment StoreEntitySet="__RefactorLog">
-                <ScalarProperty Name="OperationKey" ColumnName="OperationKey" />
+          <EntitySetMapping Name="Destinations">
+            <EntityTypeMapping TypeName="HazmatModel.Destination">
+              <MappingFragment StoreEntitySet="Destination">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -138,7 +144,7 @@
                 <ScalarProperty Name="Destination" ColumnName="Destination" />
                 <ScalarProperty Name="Gallon_Pound" ColumnName="Gallon/Pound" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="New_Distilled_Dark" ColumnName="New/Distilled/Dark" />
+                <ScalarProperty Name="New_Distilled" ColumnName="New/Distilled" />
                 <ScalarProperty Name="Material" ColumnName="Material" />
                 <ScalarProperty Name="Initials" ColumnName="Initials" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
