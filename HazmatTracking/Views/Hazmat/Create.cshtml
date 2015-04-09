@@ -149,15 +149,17 @@
         <br />
 
         <div class="row">
-            <input type="submit" value="Create" class="btn btn-default" />
+            <input type="submit" value="Create" class="btn btn-success" />
+           &nbsp;
+            @Html.ActionLink("Back To List", "Index", null, new { @class = "btn btn-primary" })
         </div>
         <br />
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+@*<div>
+    @Html.ActionLink("back to list", "index")
+</div>*@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
