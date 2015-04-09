@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[RequiredFor]
+(
+   [Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+    [Name] VARCHAR(10) NOT NULL
+)

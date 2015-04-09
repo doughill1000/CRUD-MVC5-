@@ -63,6 +63,7 @@
     <Build Include="Tables\Hazmat.sql" />
     <Build Include="Tables\Materials.sql" />
     <Build Include="Tables\Location.sql" />
+    <Build Include="Tables\RequiredFor.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="HazmatDb.publish.xml" />
