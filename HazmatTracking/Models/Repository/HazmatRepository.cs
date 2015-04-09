@@ -1,11 +1,9 @@
-﻿using System;
+﻿using HazmatTracking.Models.Utility;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using HazmatTracking.Models.Utility;
-using System.Web.UI;
 
 namespace HazmatTracking.Models.Repository
 {

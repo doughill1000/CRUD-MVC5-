@@ -2,12 +2,12 @@
 
 namespace HazmatTracking.Models.Repository
 {
-    public interface IMaterialRepository
+    public interface IDestinationRepository
     {
         /// <summary>
-        /// Returns a list of all materials
+        /// Returns a list of all destinations
         /// </summary>
         /// <returns></returns>
-        List<Material> GetAll();
+        List<Destination> GetAll();
     }
 }

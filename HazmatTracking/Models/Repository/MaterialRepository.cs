@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace HazmatTracking.Models.Repository
 {
-    public class DestinationRepository : IDestinationRepository
+    public class MaterialRepository : IMaterialRepository
     {
         /// <summary>
         /// Database used to manage Hazmat transactions
@@ -13,7 +13,7 @@ namespace HazmatTracking.Models.Repository
         /// <summary>
         /// New Hazmat Repository
         /// </summary>
-        public DestinationRepository()
+        public MaterialRepository()
         {
             db = new HazmatEntities();
 
@@ -24,13 +24,13 @@ namespace HazmatTracking.Models.Repository
         /// Returns a list of all materials
         /// </summary>
         /// <returns></returns>
-        public List<Destination> GetAll()
+        public List<Material> GetAll()
         {
-            List<Destination> destinations = db.Destinations
+            List<Material> materials = db.Materials
                 .OrderBy(m => m.Name)
                 .ToList();
 
-            return destinations;
+            return materials;
         }
     }
 }
